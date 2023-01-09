@@ -9,7 +9,7 @@ class DetailsPage extends StatelessWidget {
   final String price;
   final BuildContext context;
 
-  DetailsPage({required this.img, required this.title, required this.price, required this.context});
+  const DetailsPage({required this.img, required this.title, required this.price, required this.context});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -17,8 +17,8 @@ class DetailsPage extends StatelessWidget {
       children: [
         MainImage(img: img),
         IconButton(
-          padding: EdgeInsets.only(left: 20, top: 40),
-          icon: Icon(
+          padding: const EdgeInsets.only(left: 20, top: 40),
+          icon: const Icon(
             Icons.close,
           ),
           onPressed: () {
@@ -33,7 +33,7 @@ class DetailsPage extends StatelessWidget {
 
 
 class MainImage extends StatelessWidget {
-  MainImage({
+  const MainImage({
     required this.img,
   });
 

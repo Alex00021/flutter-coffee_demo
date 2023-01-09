@@ -1,22 +1,27 @@
 import 'package:flutter/material.dart';
-
 import '../../Screens/DetailsPage.dart';
 
 class MyHomePageBody extends StatelessWidget {
+  const MyHomePageBody({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Column(
-      children: [HeadingTopBar(), BottomBodyContainer()],
+      children: const [
+        HeadingTopBar(),
+        BottomBodyContainer()],
     );
   }
 }
 
 class BottomBodyContainer extends StatelessWidget {
+  const BottomBodyContainer({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Expanded(
       child: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.only(
               topLeft: Radius.circular(40),
@@ -29,9 +34,9 @@ class BottomBodyContainer extends StatelessWidget {
               ),
             ]),
         child: SingleChildScrollView(
-          physics: BouncingScrollPhysics(),
+          // physics: const BouncingScrollPhysics(),
           child: Column(
-            children: [
+            children: const [
               HeadingText(),
               MyCandelsList(),
               SizedBox(
@@ -48,6 +53,8 @@ class BottomBodyContainer extends StatelessWidget {
 }
 
 class BottomBodyItems extends StatelessWidget {
+  const BottomBodyItems({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -55,7 +62,7 @@ class BottomBodyItems extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.all(30.0),
           child: Row(
-            children: [
+            children: const [
               Text(
                 "Holiday Special",
                 style: TextStyle(fontSize: 24),
@@ -87,7 +94,7 @@ class BottomBodyItems extends StatelessWidget {
     return Container(
       height: 150,
       width: 230,
-      margin: EdgeInsets.only(left: 20),
+      margin: const EdgeInsets.only(left: 20, right: 20),
       child: Row(
         children: [
           ClipRRect(
@@ -100,10 +107,10 @@ class BottomBodyItems extends StatelessWidget {
                     fit: BoxFit.cover,
                   ))),
           Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: const EdgeInsets.all(2.0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
+              children: const [
                 Text("Coconut Milk Bath"),
                 Text(
                   "16 oz",
@@ -127,11 +134,13 @@ class BottomBodyItems extends StatelessWidget {
 }
 
 class HeadingText extends StatelessWidget {
+  const HeadingText({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-        SizedBox(
+        const SizedBox(
           height: 40,
         ),
         Row(
@@ -144,7 +153,7 @@ class HeadingText extends StatelessWidget {
             buildColumnAtTop("Decor"),
           ],
         ),
-        SizedBox(
+        const SizedBox(
           height: 20,
         ),
       ],
@@ -161,7 +170,7 @@ class HeadingText extends StatelessWidget {
             fontSize: 18,
           ),
         ),
-        SizedBox(
+        const SizedBox(
           height: 5,
         ),
         if (isSelected)
@@ -169,7 +178,7 @@ class HeadingText extends StatelessWidget {
             height: 5,
             width: 5,
             decoration:
-                BoxDecoration(color: Colors.black, shape: BoxShape.circle),
+                const BoxDecoration(color: Colors.black, shape: BoxShape.circle),
           )
       ],
     );
@@ -177,12 +186,14 @@ class HeadingText extends StatelessWidget {
 }
 
 class HeadingTopBar extends StatelessWidget {
+  const HeadingTopBar({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
         Row(
-          children: [
+          children: const [
             SizedBox(
               width: 15,
             ),
@@ -191,30 +202,36 @@ class HeadingTopBar extends StatelessWidget {
               style: TextStyle(fontSize: 32, letterSpacing: 1),
             ),
             Text(
-              "Anthropologie",
+              "Luckin Coffee",
               style: TextStyle(
                   fontSize: 32, fontWeight: FontWeight.bold, letterSpacing: 1),
             ),
           ],
         ),
-        SizedBox(
+        const SizedBox(
           height: 20,
         ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            buildFlatButton("home Decore", isSelected: true),
-            buildFlatButton("Bath & Body"),
-            buildFlatButton("Beauty"),
-          ],
+        SingleChildScrollView(
+          scrollDirection: Axis.horizontal,
+            physics: const BouncingScrollPhysics(),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              buildFlatButton("Classic Latte", isSelected: true),
+              buildFlatButton("Velvet Latte"),
+              buildFlatButton("cheese latte"),
+            ],
+          ),
         ),
-        SizedBox(
+        const SizedBox(
           height: 20,
         ),
       ],
     );
   }
 
+
+  /// 封装FlatButton属性的按钮
   FlatButton buildFlatButton(String text, {bool isSelected = false}) {
     return FlatButton(
       onPressed: () {
@@ -227,21 +244,23 @@ class HeadingTopBar extends StatelessWidget {
           fontSize: 18,
         ),
       ),
-      shape: StadiumBorder(),
+      shape: const StadiumBorder(),
       color: isSelected ? Colors.pink[100] : Colors.grey[300],
     );
   }
 }
 
 class MyCandelsList extends StatelessWidget {
+  const MyCandelsList({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
-      physics: BouncingScrollPhysics(),
+      physics: const BouncingScrollPhysics(),
       scrollDirection: Axis.horizontal,
       child: Row(
         children: [
-          SizedBox(
+          const SizedBox(
             width: 20,
           ),
           buildColumnWithRow("1", "Elemental Tin Candel", "29", context),
@@ -281,19 +300,19 @@ class MyCandelsList extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             Text(
               title,
-              style: TextStyle(fontSize: 16),
+              style: const TextStyle(fontSize: 16),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             Text(
               "\$ $price",
-              style: TextStyle(fontSize: 20),
+              style: const TextStyle(fontSize: 20),
             ),
           ],
         ),
@@ -303,17 +322,19 @@ class MyCandelsList extends StatelessWidget {
 }
 
 class LineBar extends StatelessWidget {
+  const LineBar({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     // print(MediaQuery.of(context).size.height);
     return Container(
       height: 5,
       width: MediaQuery.of(context).size.width,
-      margin: EdgeInsets.only(left: 40),
+      margin: const EdgeInsets.only(left: 40),
       alignment: Alignment.centerLeft,
       decoration: BoxDecoration(
         color: Colors.grey[300],
-        borderRadius: BorderRadius.only(
+        borderRadius: const BorderRadius.only(
           topLeft: Radius.circular(10),
           bottomLeft: Radius.circular(10),
         ),
@@ -321,7 +342,7 @@ class LineBar extends StatelessWidget {
       child: Container(
         height: 5,
         width: 100,
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           color: Colors.black,
           borderRadius: BorderRadius.only(
             topLeft: Radius.circular(10),

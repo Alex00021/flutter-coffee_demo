@@ -8,7 +8,7 @@ class MyHomeBottomNavBar extends StatelessWidget {
       height: 70,
       color: Colors.white,
       child: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.only(
               topLeft: Radius.circular(40),
@@ -38,7 +38,7 @@ class MyHomeBottomNavBar extends StatelessWidget {
         color: isSelected ? Colors.pink[100] : Colors.white,
         shape: BoxShape.circle,
         boxShadow: isSelected
-            ? [BoxShadow(color: Colors.grey, blurRadius: 10, spreadRadius: 1)]
+            ? [const BoxShadow(color: Colors.grey, blurRadius: 10, spreadRadius: 1)]
             : [],
       ),
       height: 50,

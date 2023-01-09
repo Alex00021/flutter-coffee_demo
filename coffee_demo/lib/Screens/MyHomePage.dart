@@ -6,6 +6,8 @@ import '../Widgets/HomePage/MyHomePageBody.dart';
 // import 'package:my_shop_app/Widgets/HomePage/MyHomePageBody.dart';
 
 class MyHomePage extends StatelessWidget {
+  const MyHomePage({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,12 +23,12 @@ class MyHomePage extends StatelessWidget {
               color: Colors.white,
               shape: BoxShape.circle,
             ),
-            margin: EdgeInsets.all(10),
+            margin: const EdgeInsets.all(10),
             child: Image.asset("assets/images/SEARCH.png"),
           ),
         ],
       ),
-      body: MyHomePageBody(),
+      body: const MyHomePageBody(),
       bottomNavigationBar: MyHomeBottomNavBar(),
     );
   }
